@@ -25,7 +25,7 @@ public class Suggestion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    //自增
-    private Integer id;
+    private Integer sugid;
 
     private String username;
 

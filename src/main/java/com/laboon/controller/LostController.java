@@ -1,8 +1,7 @@
 package com.laboon.controller;
 
 
-import com.laboon.entity.Article;
-import com.laboon.entity.Lost;
+import com.laboon.entity.Lostlist;
 import com.laboon.repository.LostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,18 +23,18 @@ public class LostController {
     LostRepository lostRepository;
 
     @GetMapping("/findAll")
-    public List<Lost> findAll(){
+    public List<Lostlist> findAll(){
         return lostRepository.findAll();
     }
 
     /**
      * 发布失物招领
-     * @param lost
+     * @param lostlist
      * @return
      */
     @PostMapping("/lostPost")
-    public String lostPost(@RequestBody Lost lost) {
-        Lost result = lostRepository.save(lost);
+    public String lostPost(@RequestBody Lostlist lostlist) {
+        Lostlist result = lostRepository.save(lostlist);
         if (result != null) {
             return "success";
         } else {

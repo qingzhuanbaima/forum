@@ -1,7 +1,6 @@
 package com.laboon.controller;
 
 
-import com.laboon.entity.Lost;
 import com.laboon.entity.Suggestion;
 import com.laboon.repository.SuggestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +33,7 @@ public class SuggestionController {
      * @param suggestion
      * @return
      */
-    @PostMapping("/suggestionPost")
+    @PostMapping("/sugPost")
     public String suggest(@RequestBody Suggestion suggestion) {
         Suggestion result = suggestionRepository.save(suggestion);
         if (result != null) {

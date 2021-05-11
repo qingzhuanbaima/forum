@@ -20,21 +20,21 @@ import javax.persistence.Id;
  */
 @Entity
 @Data
-public class Lost {
+public class Lostlist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    //自增
-    private Integer id;
+    private Integer lid;
 
     /**
      * 失物名称
      */
-    private String lost;
+    private String lostname;
 
     /**
      * 失物描述
      */
-    private String describe;
+    private String descri;
 
     /**
      * 联系方式

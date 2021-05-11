@@ -21,7 +21,7 @@ class CommentsControllerTest {
         comment.setAid(4);
         comment.setUsername("ming");
         comment.setReplytime("2021-04-14 00:36:16");
-        comment.setComment("ytuiajsgdjbdhiahanckahiuhdakndakbdjagvdjafkn");
+        comment.setComment("，都是马甲看到阿克江看到绿卡麻辣空间拉客的美女看阿卡你");
         System.out.println(comment);
         System.out.println(commentsController.addComment(comment));
     }

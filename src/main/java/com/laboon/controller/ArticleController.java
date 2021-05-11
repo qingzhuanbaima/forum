@@ -82,4 +82,13 @@ public class ArticleController {
             return "error";
         }
     }
+
+    /**
+     * 点赞
+     * @param id
+     */
+    @PostMapping("/star")
+    public void starClick(int id){
+        articleRepository.updateStarById(id);
+    }
 }

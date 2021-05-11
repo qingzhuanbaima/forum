@@ -1,6 +1,6 @@
 package com.laboon.mapper;
 
-import com.laboon.entity.Lost;
+import com.laboon.entity.Lostlist;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author laboon
  * @since 2021-04-19
  */
-public interface LostMapper extends BaseMapper<Lost> {
+public interface LostMapper extends BaseMapper<Lostlist> {
 
 }

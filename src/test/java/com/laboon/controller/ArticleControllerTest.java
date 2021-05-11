@@ -17,4 +17,8 @@ class ArticleControllerTest {
         System.out.println(articleController.findAllByLabel("运动"));
     }
 
+    @Test
+    void star(){
+        articleController.starClick(20);
+    }
 }

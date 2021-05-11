@@ -3,6 +3,7 @@ package com.laboon.controller;
 
 import com.laboon.entity.Article;
 import com.laboon.entity.Comments;
+import com.laboon.repository.ArticleRepository;
 import com.laboon.repository.CommentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,9 @@ public class CommentsController {
 
     @Autowired
     private CommentsRepository commentsRepository;
+
+    @Autowired
+    private ArticleRepository articleRepository;
 
     /**
      * 获取评论
@@ -54,6 +58,7 @@ public class CommentsController {
     public String addComment(@RequestBody Comments comment) {
         Comments result = commentsRepository.save(comment);
         if (result != null) {
+            articleRepository.updateCommentById(comment.getAid());
             return "success";
         } else {
             return "error";

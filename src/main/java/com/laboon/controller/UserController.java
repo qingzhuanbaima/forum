@@ -1,7 +1,6 @@
 package com.laboon.controller;
 
 
-import com.laboon.entity.Lost;
 import com.laboon.entity.User;
 import com.laboon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
