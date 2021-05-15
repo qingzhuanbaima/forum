@@ -4,6 +4,7 @@ package com.laboon.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -32,5 +33,7 @@ public class Article {
 
     @Column(insertable = false, columnDefinition = "int default 0")
     private Integer comment;
+
+    private String imgpathlist;
 
 }
