@@ -162,7 +162,7 @@ public class ArticleController {
         }
     }
 
-    /**
+    /**4
      * 图片转换成base64
      * @param imgid
      * @return
