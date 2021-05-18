@@ -121,6 +121,10 @@ public class ArticleController {
         return "success";
     }
 
+    @DeleteMapping("/deletearticle")
+    public void deleteArticle(int id){
+        articleRepository.deleteById(id);
+    }
 
     /**
      * 点赞

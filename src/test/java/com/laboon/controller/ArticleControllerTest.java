@@ -68,4 +68,9 @@ class ArticleControllerTest {
     void sendimg64() {
         System.out.println(articleController.sendImg("396ce23e-769d-4b58-9d85-580192bd6cda"));
     }
+
+    @Test
+    void delete(){
+        articleController.deleteArticle(27);
+    }
 }
