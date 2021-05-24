@@ -121,6 +121,10 @@ public class ArticleController {
         return "success";
     }
 
+    /**
+     * 删除文章
+     * @param id
+     */
     @DeleteMapping("/deletearticle")
     public void deleteArticle(int id){
         articleRepository.deleteById(id);
@@ -146,6 +150,7 @@ public class ArticleController {
      */
     public void base642Img(String imgid,String base64Str) {
         final Base64.Decoder decoder = Base64.getDecoder();
+        System.out.println("添加图片");
         String outBasePath = "S:\\SpringWorkspace\\forum_img_path\\";
         try {
             //解码
@@ -173,6 +178,9 @@ public class ArticleController {
      */
     public String img2Base64(String imgid){
         final Base64.Encoder encoder = Base64.getEncoder();
+        if(imgid==""){
+            return null;
+        }
         String inBasePath = "S:\\SpringWorkspace\\forum_img_path\\"+imgid+".jpg";
 
         InputStream in =null;

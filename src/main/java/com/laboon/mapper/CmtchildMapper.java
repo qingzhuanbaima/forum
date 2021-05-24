@@ -1,6 +1,6 @@
 package com.laboon.mapper;
 
-import com.laboon.entity.Cmt2cmt;
+import com.laboon.entity.Cmtchild;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author laboon
- * @since 2021-04-23
+ * @since 2021-05-24
  */
-public interface Cmt2cmtMapper extends BaseMapper<Cmt2cmt> {
+public interface CmtchildMapper extends BaseMapper<Cmtchild> {
 
 }

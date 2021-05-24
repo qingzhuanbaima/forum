@@ -6,6 +6,8 @@ import com.laboon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -21,6 +23,10 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    @GetMapping("/getalluser")
+    public List<User> getAllUser(){
+        return userRepository.findAll();
+    }
     /**
      * 注册
      * @param
