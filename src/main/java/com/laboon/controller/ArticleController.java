@@ -39,7 +39,6 @@ public class ArticleController {
 
     /**
      * 根据id找帖子
-     *
      * @param id
      * @return
      */
@@ -108,6 +107,12 @@ public class ArticleController {
             return "error";
         }
     }
+
+    /**
+     * 图片处理
+     * @param imgList
+     * @return
+     */
     @PostMapping("/imgsave")
     public String imgSave(@RequestBody String imgList){
         JSONArray jsonArray=JSONArray.parseArray(imgList);
@@ -141,6 +146,15 @@ public class ArticleController {
     }
 
 
+    /**
+     * 搜索功能
+     * @param keyWord
+     * @return
+     */
+    @GetMapping("/search")
+    List<Article> searchArticle(String keyWord){
+        return articleRepository.findAllByTitleContainingOrContentContaining(keyWord,keyWord);
+    }
 
 
     /**
@@ -149,11 +163,12 @@ public class ArticleController {
      * @param base64Str
      */
     public void base642Img(String imgid,String base64Str) {
+        //使用Java官方提供的Base64库
         final Base64.Decoder decoder = Base64.getDecoder();
-        System.out.println("添加图片");
+        //存放图片的文件夹路径
         String outBasePath = "S:\\SpringWorkspace\\forum_img_path\\";
         try {
-            //解码
+            //对base64进行解码，转为二进制
             byte[] data = decoder.decode(base64Str);
             //调整异常数据
             for (int i = 0; i < data.length; ++i) {
@@ -161,6 +176,7 @@ public class ArticleController {
                     data[i] += 256;
                 }
             }
+            //图片输出路径
             String outPath = outBasePath + imgid +".jpg";
             OutputStream out = new FileOutputStream(outPath);
             out.write(data);
@@ -197,4 +213,6 @@ public class ArticleController {
         }
         return null;
     }
+
+
 }

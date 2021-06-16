@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
+import org.w3c.dom.stylesheets.LinkStyle;
+
+import java.util.List;
 
 @SpringBootTest
 class ArticleRepositoryTest {
@@ -33,4 +36,12 @@ class ArticleRepositoryTest {
         articleRepository.updateStarById(3);
     }
 
+    @Test
+    public void search(){
+//        List<Article> articleList=articleRepository.findAllByUsernameLikeOrTitleLikeOrContentLike("%测试%","%测试%","%测试%");
+//        for (Article article:articleList
+//             ) {
+//            System.out.println(article);
+//        }
+    }
 }

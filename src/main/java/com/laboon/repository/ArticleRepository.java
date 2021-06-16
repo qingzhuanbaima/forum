@@ -17,7 +17,11 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
 
     List<Article> findAllByLabel(String label);
 
-    List<Article> findByUsernameOrTitleOrContentLike(String username, String title, String content);
+    List<Article> findAllByTitleLikeOrContentLike(String title, String content);
+
+    List<Article> findAllByTitleContainingOrContentContaining(String title, String content);
+
+//    List<Article> findAllByUsernameOr
 
     /**
      * 点赞数加一
@@ -36,4 +40,6 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
     @Modifying
     @Query(value = "update article set comment=comment+1 where id=?1", nativeQuery = true)
     void updateCommentById(int id);
+
+
 }
